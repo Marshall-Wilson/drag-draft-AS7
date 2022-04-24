@@ -1,2 +1,2 @@
-# drag-draft-AS8
-Fantasy Draft Website for RPDR All-Stars Season 8
+# drag-draft-AS7
+Fantasy Draft Website for RPDR All-Stars Season 7

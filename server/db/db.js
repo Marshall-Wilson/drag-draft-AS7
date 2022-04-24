@@ -17,8 +17,6 @@ models.weekModel(sequelize);
 models.earnerTypeModel(sequelize);
 models.earnerModel(sequelize);
 
-console.log(sequelize);
-
 // Create associations
 applyExtraSetup(sequelize);
 

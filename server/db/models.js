@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('./db');
 
 exports.userModel = (sequelize) => {
-    const User = sequelize.define('User', {
+    sequelize.define('User', {
         id: {
             allowNull: false,
             autoIncrement: true,
