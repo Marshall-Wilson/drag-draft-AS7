@@ -37,6 +37,10 @@ exports.queenModel = (sequelize) => {
             allowNull: false,
             type: DataTypes.STRING
         },
+        seasons: {
+            allowNull: false,
+            type: DataTypes.STRING
+        },
         eliminated: {
             allowNull: false,
             type: DataTypes.BOOLEAN,
@@ -56,6 +60,10 @@ exports.weekModel = (sequelize) => {
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
+            type: DataTypes.INTEGER
+        },
+        number: {
+            allowNull: false,
             type: DataTypes.INTEGER
         },
         info: {
@@ -100,6 +108,11 @@ exports.earnerModel = (sequelize) => {
             autoIncrement: true,
             primaryKey: true,
             type: DataTypes.INTEGER
+        },
+        points: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0
         }
     });
 }

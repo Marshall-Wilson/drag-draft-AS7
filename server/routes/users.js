@@ -12,7 +12,7 @@ userRouter.get('/', (req, res, next) => {
 userRouter.post('/', (req, res, next) => {
     sequelize.models.User.create({ name: req.body.name })
         .then(async user => {
-            await user.setQueens(req.body.queens);
+            if (req.body.queens) { await user.setQueens(req.body.queens) }
             res.send(user);
         })
         .catch(err => next(err));

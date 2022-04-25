@@ -11,7 +11,7 @@ weekRouter.get('/', (req, res, next) => {
 
 weekRouter.post('/', (req, res, next) => {
     sequelize.models.Week.create(req.body)
-        .then(async week => res.send(week))
+        .then(week => res.send(week))
         .catch(err => next(err));
 })
 
@@ -21,9 +21,14 @@ weekRouter.get('/:id', (req, res, next) => {
         .catch(err => next(err));
 });
 
-weekRouter.put('/:id', (req, res, next) => {
-
-})
+weekRouter.get('/:id/earners', (req, res, next) => {
+    sequelize.models.Week.findByPk(req.params.id)
+        .then(week => {
+            week.getEarners()
+                .then(earners => res.send(earners));
+        })
+        .catch(err => next(err));
+});
 
 
 module.exports = weekRouter;

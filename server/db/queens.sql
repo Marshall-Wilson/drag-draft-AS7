@@ -1,8 +1,8 @@
-insert into "Queens" (name, description) values ('', '');
-insert into "Queens" (name, description) values ('', '');
-insert into "Queens" (name, description) values ('', '');
-insert into "Queens" (name, description) values ('', '');
-insert into "Queens" (name, description) values ('', '');
-insert into "Queens" (name, description) values ('', '');
-insert into "Queens" (name, description) values ('', '');
-insert into "Queens" (name, description) values ('', '');
+insert into "Queens" (name, description, seasons, "createdAt", "updatedAt") values ('Jaida Essence Hall', 'Look over there!', 'Season 12', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into "Queens" (name, description, seasons, "createdAt", "updatedAt") values ('Jinkx Monsoon', 'Seattle''s premier Jewish narcoleptic drag queen.', 'Season 5', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into "Queens" (name, description, seasons, "createdAt", "updatedAt") values ('Monét X Change', 'You better get your currency in check, bitch!', 'Season 10, All Stars 4', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into "Queens" (name, description, seasons, "createdAt", "updatedAt") values ('Raja', 'I have a master''s degree in FIERCE!', 'Season 3', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into "Queens" (name, description, seasons, "createdAt", "updatedAt") values ('Shea Couleé', 'My name is Shea Couleé, and I didn''t come to play, I came to slay!', 'Season 9, All Stars 5', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into "Queens" (name, description, seasons, "createdAt", "updatedAt") values ('The Vivienne', 'Don''t get too comfy, girls. This is gonna take two minutes.', 'UK Season 1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into "Queens" (name, description, seasons, "createdAt", "updatedAt") values ('Trinity The Tuck', 'Body, body, and more body. The holy Trinity has arrived.', 'Season 9, All Stars 4', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+insert into "Queens" (name, description, seasons, "createdAt", "updatedAt") values ('Yvie Oddly', 'I''m just a plain old heteronormative girl.', 'Season 11', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
