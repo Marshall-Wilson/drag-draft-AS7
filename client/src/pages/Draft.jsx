@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react';
 import DraftQueen from "../components/DraftQueen.jsx";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-
+import Container from '@mui/material/Container';
+import List from '@mui/material/List';
 
 const QUEENS_ON_TEAM = 3;
 
@@ -10,8 +11,6 @@ const Draft = () => {
     const [queens, setQueens] = useState([]); 
     const [selected, setSelected] = useState({}); 
     const [name, setName] = useState(""); 
-
-    console.log(name);
 
     const toggleQueenSelected = (id) => {
         if (selected[id]){ // queen is currently selected
@@ -39,7 +38,7 @@ const Draft = () => {
         return total;
     }
 
-    const validateAndSubmit = () => {
+    const validateAndSubmit = async () => {
         // Check that user has name and queens
         if (countSelected() !== 3) {
             alert("Select 3 Queens!");
@@ -59,13 +58,17 @@ const Draft = () => {
             name: name,
             queens: userQueens
         };
-        fetch('/api/users', {
+        await fetch('/api/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(newUser)
         })
+
+        setName('');
+        setSelected({});
+        alert('YOU DID IT!');
     }
 
     
@@ -87,18 +90,20 @@ const Draft = () => {
 
 
   return (
-    <div>
+    <Container>
         <TextField value={name} label="Your Name" variant="standard" onChange={e => setName(e.target.value)} />
-        {queens.map(queen => {
-            return (<DraftQueen 
-                key={queen.id}
-                queen={queen} 
-                isSelected={selected[queen.id]} 
-                toggleQueenSelected={toggleQueenSelected} 
-            />)
-        })}
+        <List>
+            {queens.map(queen => {
+                return (<DraftQueen
+                    key={queen.id}
+                    queen={queen}
+                    isSelected={selected[queen.id]}
+                    toggleQueenSelected={toggleQueenSelected}
+                />)
+            })}
+        </List>
         <Button variant="outlined" onClick={validateAndSubmit}>Submit</Button>
-    </div>
+    </Container>
   )
 }
 

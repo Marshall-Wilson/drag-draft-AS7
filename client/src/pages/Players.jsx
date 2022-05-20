@@ -1,4 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react';
+import TeamModal from "../components/TeamModal.jsx";
+import Container from '@mui/material/Container';
+import Stack from '@mui/material/Stack';
 
 const Players = () => {
     const [users, setUsers] = useState([]);
@@ -15,14 +18,16 @@ const Players = () => {
     }, [])
 
     return (
-        <div>
+        <Container>
             <h2>Players</h2>
-            {users.map((user) => {
-                return (
-                    <p> {user.name} </p>
-                )
-            })}
-        </div>
+            <Stack>
+                {users.map((user) => {
+                    return (
+                        <TeamModal player={user} key={user.id}/>
+                    )
+                })}
+            </Stack>
+        </Container>
     )
 }
 

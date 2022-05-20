@@ -1,4 +1,7 @@
 import React, {useEffect, useState} from 'react'
+import QueenModal from "../components/QueenModal.jsx";
+import Container from '@mui/material/Container';
+import Stack from '@mui/material/Stack';
 
 const Queens = () => {
     const [queens, setQueens] = useState([]);
@@ -15,14 +18,16 @@ const Queens = () => {
     }, [])
 
     return (
-        <div>
+        <Container>
             <h2>Queens</h2>
-            {queens.map((queen) => {
-                return (
-                    <p> {queen.name} </p>
-                )
-            })}
-        </div>
+            <Stack>
+                {queens.map((queen) => {
+                    return (
+                        <QueenModal queen={queen} key={queen.id}/>
+                    )
+                })}
+            </Stack>
+        </Container>
     )
 }
 

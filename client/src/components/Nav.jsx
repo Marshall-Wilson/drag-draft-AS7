@@ -6,6 +6,8 @@ import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import Container from '@mui/material/Container'
+import {NavStyle} from '../styles/NavStyle'
 
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +22,7 @@ const Nav = () => {
 
     const list = () => (
         <Box
-          sx={{ width: 250 }}
+          style={NavStyle}
           role="presentation"
           onClick={toggleDrawer(false)}
           onKeyDown={toggleDrawer(false)}
@@ -38,19 +40,19 @@ const Nav = () => {
       );
 
   return (
-    <div>
-        <Link to={"/"}>
-            <h1>Drag Draft All Stars 7</h1>
-        </Link>
-        <Button onClick={toggleDrawer(true)}>Nav</Button>
-          <Drawer
-            anchor={"right"}
-            open={isOpen}
-            onClose={toggleDrawer(false)}
-          >
-            {list()}
-          </Drawer>
-    </div>
+    <Container maxWidth="xs">
+      <Link to={"/"}>
+          <h1>Drag Draft All Stars 7</h1>
+      </Link>
+      <Button onClick={toggleDrawer(true)}>Nav</Button>
+        <Drawer
+          anchor={"right"}
+          open={isOpen}
+          onClose={toggleDrawer(false)}
+        >
+          {list()}
+        </Drawer>
+    </Container>
   )
 }
 

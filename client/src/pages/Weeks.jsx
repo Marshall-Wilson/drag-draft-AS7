@@ -1,4 +1,7 @@
 import React, {useEffect, useState} from 'react'
+import WeekModal from "../components/WeekModal.jsx";
+import Container from '@mui/material/Container';
+import Stack from '@mui/material/Stack';
 
 const Weeks = () => {
     const [weeks, setWeeks] = useState([]);
@@ -15,14 +18,16 @@ const Weeks = () => {
     }, [])
 
     return (
-        <div>
+        <Container>
             <h2>Weeks</h2>
-            {weeks.map((week) => {
-                return (
-                    <p> {week.number}: {week.info}</p>
-                )
-            })}
-        </div>
+            <Stack>
+                {weeks.map((week) => {
+                    return (
+                        <WeekModal week={week} key={week.id}/>
+                    )
+                })}
+            </Stack>
+        </Container>
     )
 }
 

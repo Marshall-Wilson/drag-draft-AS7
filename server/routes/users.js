@@ -21,12 +21,30 @@ userRouter.post('/', (req, res, next) => {
 userRouter.get('/points', (req, res, next) => {
     sequelize.models.User.findAll()
         .then(async users => {
-            await users.forEach(async user => {
+            for (let i in users) {
+                let user = users[i];
                 const userQueens = await user.getQueens();
                 const points = userQueens.reduce((prev, curr) => prev + curr.points, 0);
                 user.points = points;
                 await user.save();
-            })
+            }
+            res.send(users);
+        })
+        .catch(err => next(err));
+});
+
+userRouter.put('/update', (req, res, next) => {
+    sequelize.models.User.findAll()
+        .then(async users => {
+            for (let i in users) {
+                let user = users[i];
+                let userQueens = await user.getQueens();
+                user.points = 0;
+                for (let i in userQueens) {
+                    user.points += userQueens[i].points;
+                }
+                await user.save();
+            }
             res.send(users);
         })
         .catch(err => next(err));
@@ -45,6 +63,7 @@ userRouter.get('/:id/queens', (req, res, next) => {
             .catch(err => next(err)))
         .catch(err => next(err));
 });
+
 
 
 module.exports = userRouter;

@@ -14,6 +14,8 @@ import Players from "./pages/Players.jsx";
 import Rules from "./pages/Rules.jsx";
 import Weeks from "./pages/Weeks.jsx";
 import Draft from "./pages/Draft.jsx";
+import Admin from "./pages/Admin.jsx";
+
 
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
           <Route exact path="/weeks" element={<Weeks />}/>
           <Route exact path="/rules" element={<Rules />}/>
           <Route exact path="/draft" element={<Draft />}/>
+          <Route exact path="/admin" element={<Admin />}/>
         </Routes>
         <Footer />
       </Router>
