@@ -116,7 +116,7 @@ const AdminForm = ({queens, types, categories}) => {
             value={weekInfo}
             onChange={e => setWeekInfo(e.target.value)}
         />
-        {categories.map(category => {
+        {categories.sort().map(category => {
             return (
                 <Accordion key={category}>
                     <AccordionSummary

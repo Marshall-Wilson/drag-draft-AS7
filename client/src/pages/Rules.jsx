@@ -22,7 +22,7 @@ const Rules = () => {
     <Container>
         <h1>Rules</h1>
         <Stack>
-            {types.map(type => {
+            {types.sort((a, b) => a.category < b.category).map(type => {
               return (
                 <Box sx={{ p: 2, border: '1px solid grey', margin: '5px 0', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                   <h3>{type.name}</h3>
