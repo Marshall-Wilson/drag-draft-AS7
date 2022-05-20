@@ -1,6 +1,14 @@
 {
-  "dependencies": {
-    "create-react-app": "^5.0.1",
-    "express-generator": "^4.16.1"
-  }
+    "dependencies": {
+        "create-react-app": "^5.0.1",
+        "express-generator": "^4.16.1"
+    },
+    "scripts": {
+        "start": "cd ./server && npm start",
+        "heroku-postbuild": "cd ./client && npm run build && cd ../server && npm install"
+    },
+    "engines": {
+        "node": "17.9.0",
+        "npm": "8.5.5"
+    }
 }
