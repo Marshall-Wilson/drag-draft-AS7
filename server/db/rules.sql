@@ -1,0 +1,1 @@
+insert into "EarnerTypes" (name, description, category, value, "createdAt", "updatedAt") values ('Maxi Challenge Tops', 'The top queens for a week''s maxi challenge', 'Judging', 10, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
