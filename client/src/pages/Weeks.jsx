@@ -21,7 +21,7 @@ const Weeks = () => {
         <Container>
             <h2>Weeks</h2>
             <Stack>
-                {weeks.map((week) => {
+                {weeks.sort((a, b)=> a.number < b.number).map((week) => {
                     return (
                         <WeekModal week={week} key={week.id}/>
                     )

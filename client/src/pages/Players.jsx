@@ -21,7 +21,7 @@ const Players = () => {
         <Container>
             <h2>Players</h2>
             <Stack>
-                {users.map((user) => {
+                {users.sort((a, b) => a.points > b.points).map((user) => {
                     return (
                         <TeamModal player={user} key={user.id}/>
                     )

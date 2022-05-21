@@ -16,8 +16,6 @@ import Weeks from "./pages/Weeks.jsx";
 import Draft from "./pages/Draft.jsx";
 import Admin from "./pages/Admin.jsx";
 
-
-
 function App() {
   return (
     <div className="App">

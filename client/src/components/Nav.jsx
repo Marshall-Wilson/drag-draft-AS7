@@ -42,7 +42,7 @@ const Nav = () => {
   return (
     <Container maxWidth="xs">
       <Link to={"/"}>
-          <h1>Drag Draft All Stars 7</h1>
+          <img src={"images/as7Logo.png"} />
       </Link>
       <Button onClick={toggleDrawer(true)}>Nav</Button>
         <Drawer

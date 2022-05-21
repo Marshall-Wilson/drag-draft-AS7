@@ -21,7 +21,7 @@ const Queens = () => {
         <Container>
             <h2>Queens</h2>
             <Stack>
-                {queens.map((queen) => {
+                {queens.sort((a, b) => a.points > b.points).map((queen) => {
                     return (
                         <QueenModal queen={queen} key={queen.id}/>
                     )
