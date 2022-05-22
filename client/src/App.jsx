@@ -8,7 +8,6 @@ import "./App.css"
 
 import Nav from "./components/Nav.jsx";
 import Footer from "./components/Footer.jsx";
-import Home from './pages/Home.jsx';
 import Queens from "./pages/Queens.jsx";
 import Players from "./pages/Players.jsx";
 import Rules from "./pages/Rules.jsx";
@@ -22,7 +21,7 @@ function App() {
       <Router>
         <Nav />
         <Routes>
-          <Route exact path="/" element={<Home />}/>
+          <Route exact path="/" element={<Players />}/>
           <Route exact path="/queens" element={<Queens />}/>
           <Route exact path="/players" element={<Players />}/>
           <Route exact path="/weeks" element={<Weeks />}/>
