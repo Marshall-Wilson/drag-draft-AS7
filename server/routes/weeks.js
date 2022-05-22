@@ -35,7 +35,9 @@ weekRouter.get('/:id/earners', (req, res, next) => {
                             points: earner.points,
                             earnerName: type.name,
                             earnerDescription: type.description,
-                            queenName: queen.name
+                            earnerCategory: type.category,
+                            queenName: queen.name,
+                            queenId: queen.id
                         })
                     }
                     res.send(newEarners);

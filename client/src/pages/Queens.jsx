@@ -18,9 +18,9 @@ const Queens = () => {
     }, [])
 
     return (
-        <Container>
+        <Container style={{width: '100%', padding: '0', marginBottom: '50px'}}>
             <h2>Queens</h2>
-            <Stack>
+            <Stack style={{width: '100%', padding: '0'}}>
                 {queens.sort((a, b) => a.points < b.points).map((queen) => {
                     return (
                         <QueenModal queen={queen} key={queen.id}/>

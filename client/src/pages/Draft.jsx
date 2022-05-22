@@ -90,8 +90,15 @@ const Draft = () => {
 
 
   return (
-    <Container>
-        <TextField value={name} label="Your Name" variant="standard" onChange={e => setName(e.target.value)} />
+    <Container maxWidth={"xs"}>
+        <h2>Sign Up</h2>
+        <TextField value={name} 
+                    label="Your Name" 
+                    variant="outlined" 
+                    fullWidth 
+                    onChange={e => setName(e.target.value)} 
+                    style={{backgroundColor: 'white', marginBottom: '20px'}}
+        />
         <List>
             {queens.map(queen => {
                 return (<DraftQueen
@@ -102,7 +109,7 @@ const Draft = () => {
                 />)
             })}
         </List>
-        <Button variant="outlined" onClick={validateAndSubmit}>Submit</Button>
+        <Button variant="outlined" sx={{bgcolor: 'background.paper', marginBottom: '20px'}} onClick={validateAndSubmit}>Submit</Button>
     </Container>
   )
 }

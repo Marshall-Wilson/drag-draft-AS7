@@ -11,7 +11,7 @@ const Home = () => {
     <Container maxWidth="xs">
       <List>
           {['Queens', 'Players', 'Weeks', 'Rules', 'Draft'].map((text, index) => (
-            <Link to={`/${text}`}>
+            <Link to={`/${text}`} key={text}>
               <ListItem button key={text} style={NavLinkStyle}>
                   <ListItemText primary={text} />
               </ListItem>

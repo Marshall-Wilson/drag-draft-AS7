@@ -19,7 +19,7 @@ const Weeks = () => {
 
     return (
         <Container>
-            <h2>Weeks</h2>
+            <h2>Week Results</h2>
             <Stack>
                 {weeks.sort((a, b)=> a.number > b.number).map((week) => {
                     return (
