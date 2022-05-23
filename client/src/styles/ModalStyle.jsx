@@ -3,7 +3,7 @@ const ModalStyle = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '85%',
+    width: '320px',
     backgroundColor: 'white',
     borderRadius: '10px',
     boxShadow: 24,
@@ -11,7 +11,8 @@ const ModalStyle = {
     alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'center',
-    padding: '50px 10px'
+    padding: '50px 10px',
+    overflow: 'scroll'
 }
 
 const QueenButtonStyle = {
