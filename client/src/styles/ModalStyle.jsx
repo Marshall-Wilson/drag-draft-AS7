@@ -11,7 +11,7 @@ const ModalStyle = {
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'baseline',
     padding: '0px 10px 50px 10px',
     overflow: 'scroll'
 }
@@ -30,7 +30,7 @@ const QueenButtonStyle = {
 
 const QueenImageStyle = {
     width: '75%',
-    marginTop: '100px',
+    marginTop: '50px',
     marginBottom: '10px'
 }
 
