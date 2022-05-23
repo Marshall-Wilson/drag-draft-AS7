@@ -4,6 +4,7 @@ const ModalStyle = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: '320px',
+    maxHeight: '70%',
     backgroundColor: 'white',
     borderRadius: '10px',
     boxShadow: 24,
@@ -11,7 +12,7 @@ const ModalStyle = {
     alignItems: 'center',
     flexDirection: 'column',
     justifyContent: 'center',
-    padding: '50px 10px',
+    padding: '0px 10px 50px 10px',
     overflow: 'scroll'
 }
 
@@ -29,6 +30,7 @@ const QueenButtonStyle = {
 
 const QueenImageStyle = {
     width: '75%',
+    marginTop: '100px',
     marginBottom: '10px'
 }
 
