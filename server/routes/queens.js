@@ -27,6 +27,7 @@ queenRouter.put('/update', async(req, res, next) => {
         const newPoints = earners.reduce((sum, earner) => {
             return sum + earner.points;
         }, 0);
+        await updateStarsAndPlungers(queen, earners);
         queen.points = newPoints;
         await queen.save();
     })
@@ -48,5 +49,22 @@ queenRouter.put('/:id/eliminate', (req, res, next) => {
         })
         .catch(err => next(err));
 });
+
+const updateStarsAndPlungers = async(queen, earners) => {
+    let stars = 0;
+    let plungers = 0;
+    console.log(earners[0])
+    for (let i in earners) {
+        const earnerType = await earners[i].getEarnerType();
+        if (earnerType.name === 'Legendary Legend Star') {
+            stars += 1;
+        } else if (earnerType.name === 'Blocking Plunger') {
+            plungers += 1;
+        }
+    }
+    queen.stars = stars;
+    queen.plungers = plungers;
+    await queen.save();
+}
 
 module.exports = queenRouter;

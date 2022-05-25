@@ -50,6 +50,16 @@ exports.queenModel = (sequelize) => {
             allowNull: false,
             type: DataTypes.INTEGER,
             defaultValue: 0
+        },
+        stars: {
+            allowNull: false,
+            type: DataTypes.INTEGER,
+            defaultValue: 0
+        },
+        plungers: {
+            allowNull: false,
+            type: DataTypes.INTEGER,
+            defaultValue: 0
         }
     });
 }
