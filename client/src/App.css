@@ -12,3 +12,27 @@ a {
     text-decoration: none;
     color: black;
 }
+
+.iconContainer {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.iconContainer img {
+    width: 40px;
+}
+
+@media screen and (max-width: 500px) {
+    .iconContainer {
+        max-width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+    .iconContainer img {
+        width: 25px;
+    }
+}

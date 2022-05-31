@@ -54,8 +54,8 @@ const updateStarsAndPlungers = async(queen, earners) => {
     let stars = 0;
     let plungers = 0;
     console.log(earners[0])
-    for (let i in earners) {
-        const earnerType = await earners[i].getEarnerType();
+    for (let earner of earners) {
+        const earnerType = await earner.getEarnerType();
         if (earnerType.name === 'Legendary Legend Star') {
             stars += 1;
         } else if (earnerType.name === 'Blocking Plunger') {

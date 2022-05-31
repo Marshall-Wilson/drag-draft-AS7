@@ -19,8 +19,8 @@ const ModalStyle = {
 const QueenButtonStyle = {
     width: '100%',
     padding: '0 6px',
-    display: 'flex', 
-    justifyContent: 'space-between',
+    display: 'flex',
+    flexWrap: 'wrap',
     margin: '5px 0',
     border: '1px solid rgba(229, 229, 229, 1)',
     borderRadius: '10px',

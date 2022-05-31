@@ -16,9 +16,29 @@ const TeamModal = ({queen}) => {
     return (
         <Container style={{width: '100%', padding: '0 10px'}}>
             <Button style={QueenButtonStyle} onClick={handleOpen} className={queen.eliminated ? "eliminated" : null}>
-                <Avatar src={`/images/${queen.id}.webp`} variant="circle" sx={{ width: 38, height: 38 }}/>
-                <p style={{fontSize: '14px'}}>{queen.name}</p>
-                <p style={{fontWeight: 'bold', fontSize: '20px', margin: '0'}}>{String(queen.points).padStart(3, '0')}</p>
+                <div style={{
+                    width: '100%',
+                    display: 'flex', 
+                    justifyContent: 'space-between',
+                }} >
+                    <Avatar src={`/images/${queen.id}.webp`} variant="circle" sx={{ width: 65, height: 65, margin: 'auto 7px'}}/>
+                    <p style={{fontSize: '14px'}}>{queen.name}</p>
+                    <div>
+                        <p style={{fontWeight: 'bold', fontSize: '20px', margin: '0 0 0 25px'}}>{String(queen.points).padStart(3, '0')}</p>
+                        <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'flex-end'
+                        }}>
+                        <div className='iconContainer'>
+                            {[...Array(queen.stars)].map(i => <img key={i} src={'images/legend_star.webp'} alt='legendary legend star'/>)}
+                        </div>
+                        <div className='iconContainer'>
+                            {[...Array(queen.plungers)].map(i => <img key={i} src={'images/plunger.png'} alt='plunger of blockage'/>)}
+                        </div>
+                    </div>
+                </div>
+                </div>
             </Button>
             <Modal
                 open={open}
@@ -32,6 +52,21 @@ const TeamModal = ({queen}) => {
                     <h2 style={{marginBottom: '0px'}}>{queen.name}</h2>
                     <p style={{color: 'rgba(87, 154, 216, 0.5)'}}>{queen.seasons}</p>
                     <p style={{textAlign: 'center', fontStyle: 'italic', marginTop: '0px'}}>"{queen.description}"</p>
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}>
+                        {[...Array(queen.stars)].map(i => <img key={i} src={'images/legend_star.webp'} alt='legendary legend star' style={{width: '40px'}}/>)}
+                    </div>
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginTop: '10px'
+                    }}>
+                        {[...Array(queen.plungers)].map(i => <img key={i} src={'images/plunger.png'} alt='plunger of blockage' style={{width: '40px'}}/>)}
+                    </div>
                     <p style={{
                         textAlign: 'center', 
                         backgroundColor: '#579AD8', 
